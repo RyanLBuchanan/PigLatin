@@ -39,10 +39,11 @@ namespace PigLatin
             // inputTextBox
             // 
             this.inputTextBox.Location = new System.Drawing.Point(48, 32);
-            this.inputTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.inputTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.inputTextBox.Name = "inputTextBox";
-            this.inputTextBox.Size = new System.Drawing.Size(488, 33);
+            this.inputTextBox.Size = new System.Drawing.Size(1016, 33);
             this.inputTextBox.TabIndex = 0;
+            this.inputTextBox.TextChanged += new System.EventHandler(this.inputTextBox_TextChanged);
             // 
             // inputLabel
             // 
@@ -50,7 +51,7 @@ namespace PigLatin
             this.inputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputLabel.Location = new System.Drawing.Point(48, 16);
             this.inputLabel.Name = "inputLabel";
-            this.inputLabel.Size = new System.Drawing.Size(192, 16);
+            this.inputLabel.Size = new System.Drawing.Size(191, 16);
             this.inputLabel.TabIndex = 1;
             this.inputLabel.Text = "Input sentence to be translated:";
             // 
@@ -58,9 +59,9 @@ namespace PigLatin
             // 
             this.outputLabel.AutoSize = true;
             this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputLabel.Location = new System.Drawing.Point(40, 280);
+            this.outputLabel.Location = new System.Drawing.Point(40, 278);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(56, 16);
+            this.outputLabel.Size = new System.Drawing.Size(55, 16);
             this.outputLabel.TabIndex = 3;
             this.outputLabel.Text = "Results:";
             // 
@@ -68,33 +69,38 @@ namespace PigLatin
             // 
             this.outputTextBox.Location = new System.Drawing.Point(40, 295);
             this.outputTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.outputTextBox.Multiline = true;
             this.outputTextBox.Name = "outputTextBox";
-            this.outputTextBox.Size = new System.Drawing.Size(488, 33);
+            this.outputTextBox.Size = new System.Drawing.Size(1016, 177);
             this.outputTextBox.TabIndex = 2;
+            this.outputTextBox.TextChanged += new System.EventHandler(this.outputTextBox_TextChanged);
             // 
             // tanslateButton
             // 
             this.tanslateButton.Location = new System.Drawing.Point(104, 152);
             this.tanslateButton.Name = "tanslateButton";
-            this.tanslateButton.Size = new System.Drawing.Size(368, 56);
+            this.tanslateButton.Size = new System.Drawing.Size(896, 56);
             this.tanslateButton.TabIndex = 4;
-            this.tanslateButton.Text = "Generate Pig Latin";
+            this.tanslateButton.Text = "Translate to Pig Latin";
             this.tanslateButton.UseVisualStyleBackColor = true;
+            this.tanslateButton.Click += new System.EventHandler(this.tanslateButton_Click);
             // 
             // PigLatinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.ClientSize = new System.Drawing.Size(1113, 493);
             this.Controls.Add(this.tanslateButton);
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.outputTextBox);
             this.Controls.Add(this.inputLabel);
             this.Controls.Add(this.inputTextBox);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "PigLatinForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pig Latin Translator";
+            this.Load += new System.EventHandler(this.PigLatinForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
